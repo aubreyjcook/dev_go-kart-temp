@@ -19,7 +19,9 @@ function escapeHtml(value: string) {
 }
 
 function recipient() {
-  const value = (process.env.REGISTRATION_TO_EMAIL ?? VENUE.email).trim();
+  const value = (
+    process.env.REGISTRATION_TO_EMAIL ?? VENUE.registrationEmail
+  ).trim();
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
     throw new Error("REGISTRATION_TO_EMAIL is not a valid email address");

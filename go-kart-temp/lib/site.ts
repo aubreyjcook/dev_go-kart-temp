@@ -8,6 +8,7 @@ export const VENUE = {
   phoneDisplay: "01427 671223",
   phoneTel: "+441427671223",
   email: "info@racekartcentre.com",
+  registrationEmail: "info@TheApexAsylum.co.uk",
   currentSite: "https://racekartcentre.com",
 } as const;
 
