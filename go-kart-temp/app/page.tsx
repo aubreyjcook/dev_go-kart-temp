@@ -102,7 +102,7 @@ export default function Home() {
               <span className="px-2" aria-hidden="true">
                 ·
               </span>
-              {VENUE.street}, {VENUE.town}, {VENUE.region} {VENUE.postcode}
+              {VENUE.town}
             </p>
             <p>
               <a
