@@ -1,14 +1,24 @@
 import { Suspense } from "react";
+import Image from "next/image";
 import { PlacesLeft, PlacesLeftFallback } from "@/components/places-left";
 import { RegisterForm } from "@/components/register-form";
 import { VENUE } from "@/lib/site";
 
 export default function Home() {
   return (
-    <div className="relative flex flex-1 flex-col bg-background text-foreground">
+    <div className="relative flex flex-1 flex-col overflow-hidden bg-background text-foreground">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(225,6,0,0.22),transparent_42%)]"
         aria-hidden="true"
+      />
+      <Image
+        src="/gokart-bg.jpg"
+        alt=""
+        width={1920}
+        height={1080}
+        priority
+        aria-hidden
+        className="pointer-events-none absolute top-[22rem] -left-[4%] w-[min(880px,128vw)] max-w-none opacity-80 select-none [mask-image:radial-gradient(ellipse_at_center,black_55%,transparent_78%)] lg:top-56 lg:left-16 lg:w-[740px] lg:opacity-100"
       />
       <div className="relative flex flex-1 flex-col">
         <div className="finish-line" aria-hidden="true" />
@@ -24,20 +34,12 @@ export default function Home() {
               </p>
               <p className="text-sm text-muted">{VENUE.town}</p>
             </div>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-              <a
-                href="#register"
-                className="font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
-              >
-                Pre-register
-              </a>
-              <a
-                href={`tel:${VENUE.phoneTel}`}
-                className="font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
-              >
-                {VENUE.phoneDisplay}
-              </a>
-            </div>
+            <a
+              href="#register"
+              className="text-sm font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+            >
+              Pre-register
+            </a>
           </div>
         </header>
 
@@ -46,10 +48,10 @@ export default function Home() {
             <p className="font-display text-sm font-semibold tracking-[0.22em] text-accent uppercase">
               {VENUE.town}
             </p>
-            <h1 className="mt-3 max-w-xl font-display text-5xl leading-[0.92] font-semibold tracking-tight uppercase sm:text-7xl">
+            <h1 className="mt-3 max-w-xl font-display text-5xl leading-[0.92] font-semibold tracking-tight uppercase [text-shadow:0_2px_18px_rgba(0,0,0,0.85)] sm:text-7xl">
               Pre-register
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted [text-shadow:0_2px_12px_rgba(0,0,0,0.9)]">
               Outdoor go-karting in {VENUE.town}. Leave your details and the
               track will be in touch.
             </p>
@@ -103,15 +105,6 @@ export default function Home() {
               {VENUE.street}, {VENUE.town}, {VENUE.region} {VENUE.postcode}
             </p>
             <p>
-              <a
-                href={`tel:${VENUE.phoneTel}`}
-                className="text-foreground underline-offset-4 hover:underline"
-              >
-                {VENUE.phoneDisplay}
-              </a>
-              <span className="px-2" aria-hidden="true">
-                ·
-              </span>
               <a
                 href={`mailto:${VENUE.email}`}
                 className="text-foreground underline-offset-4 hover:underline"

@@ -75,7 +75,7 @@ export async function registerInterest(
   if (created.status === "duplicate") {
     return {
       status: "error",
-      message: `That email is already pre-registered. Call ${VENUE.phoneDisplay} if you need to change it.`,
+      message: `That email is already pre-registered. Email ${VENUE.email} if you need to change it.`,
       fields: { email: "This email is already on the list." },
       number: 0,
       eligible: false,
@@ -120,7 +120,7 @@ export async function registerInterest(
 
     return {
       status: "error",
-      message: `We couldn't send your registration. Try again, or call ${VENUE.phoneDisplay}.`,
+      message: `We couldn't send your registration. Try again, or email ${VENUE.email}.`,
       fields: {},
       number: 0,
       eligible: false,
