@@ -14,9 +14,9 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Pre-register | Race Kart Centre, Gainsborough",
+  title: "Pre-register | Apex Asylum, Gainsborough",
   description:
-    "Temporary page for Race Kart Centre in Gainsborough. The first 100 pre-registrations get a free balaclava when they book their first double session. A new electric fleet of go-karts will be available.",
+    "Temporary page for Apex Asylum in Gainsborough. The first 100 pre-registrations get a free balaclava when they book their first double session. A new electric fleet of go-karts will be available.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
